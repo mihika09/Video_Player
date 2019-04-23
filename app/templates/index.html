@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for item in videos %}
+        {% set id = item['contentDetails']['videoId'] %}
+        {% set title = item['snippet']['title'] %}
+        {% set description = item['snippet']['description'] %}
+        {% set thumbnail = item['snippet']['thumbnails']['medium']['url'] %}
+        <div>
+            <a href="{{ url_for('play', pid=pid, vid=id) }}">
+                <img src = "{{ thumbnail }}">
+            </a>
+        </div>
+    {% endfor %}
+</body>
+</html>

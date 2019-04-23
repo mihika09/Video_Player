@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% set id = video[0]['contentDetails']['videoId'] %}
+    {% set title = video[0]['snippet']['title'] %}
+    {% set description = video[0]['snippet']['description'] %}
+    <div>
+        <h3>{{ title }}</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{id}}?autoplay=1&mute=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <p>{{ description }}</p>
+    </div>
+</body>
+</html>
